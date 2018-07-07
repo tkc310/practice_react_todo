@@ -24,7 +24,7 @@ export default class Input extends Component {
   render() {
     return (
       <div>
-        <input type="text" onChange={this.handleChange} />
+        <input type="text" onChange={this.handleChange} value={this.state.textValue} />
         <input type="button" value="追加"
                onClick={this.handleClick} />
       </div>

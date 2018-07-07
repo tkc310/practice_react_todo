@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import List from './List'
 import Input from './Input'
+import Reset from './Reset'
 
 class App extends Component {
   constructor(props){
@@ -17,6 +18,7 @@ class App extends Component {
 
     this.addTodo = this.addTodo.bind(this);
     this.deleteTodo = this.deleteTodo.bind(this);
+    this.resetTodo = this.resetTodo.bind(this);
   }
 
   syncStorage() {
@@ -36,9 +38,18 @@ class App extends Component {
 
   // 削除機能
   deleteTodo(idx) {
-    console.log(idx);
     // 削除
     this.state.todo.splice(idx, 1);
+    // 保存
+    this.setState({todo: this.state.todo});
+    // ローカルストレージに保存
+    this.syncStorage();
+  }
+
+  // リセット
+  resetTodo() {
+    // 削除
+    this.state.todo = [];
     // 保存
     this.setState({todo: this.state.todo});
     // ローカルストレージに保存
@@ -52,6 +63,7 @@ class App extends Component {
         <List todo={this.state.todo}
               onClick={this.deleteTodo} />
         <Input onClick={this.addTodo} />
+        <Reset onClick={this.resetTodo} />
       </div>
     );
   }

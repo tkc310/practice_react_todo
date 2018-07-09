@@ -73,3 +73,6 @@ $ git push origin master
 
 しばらく立った後、github pagesを操作する箇所の上部に表示されたURLにアクセスすると作成したTODOアプリが閲覧できます。
 
+https://taka-p.github.io/practice_react_todo/my-app/build/
+
+![2018-07-09 10 33 22](https://user-images.githubusercontent.com/5730338/42426528-94d9ff70-8363-11e8-8caf-622bb5564592.png)

@@ -51,3 +51,25 @@ $ npm start
 (シリアライズ/デシリアライズなどを行ってくれる、イテレーションしてくれるメソッドなど)
 #### 2. TODOリストを一括削除するリセットボタンを設置
 
+## おまけ
+### github pagesに公開
+
+#### 1. ビルド
+```
+$ npm run build
+```
+
+`build/index.html` のcss, jsの読み込みパスを相対パスに変更
+
+#### 2. githubにリポジトリ作成、github pagesで公開
+`.gitignore` ファイルから `build` ディレクトリを削除する。
+
+```
+$ git add -A
+$ git commit -m 'first commit'
+$ git push origin master
+```
+リポジトリの `Setting` タブからgithub pagesを公開する。
+
+しばらく立った後、github pagesを操作する箇所の上部に表示されたURLにアクセスすると作成したTODOアプリが閲覧できます。
+
